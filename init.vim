@@ -11,7 +11,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 "Completion
-Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
 let g:ycm_server_python_interpreter = 'python'
 "let g:ycm_clangd_binary_path = "/usr/bin/clangd"
@@ -37,7 +37,7 @@ autocmd Filetype hpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 Plug 'rhysd/vim-clang-format'
 let g:clang_format#detect_style_file=1
 let g:clang_format#auto_format_on_insert_leave=1
-autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Mozilla"}
+autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google"}
 
 " Markdown
 Plug 'godlygeek/tabular'
