@@ -24,6 +24,9 @@ nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
 
+"Rust
+autocmd Filetype rs set tabstop=8 softtabstop=4 expandtab shiftwidth=4 smarttab
+
 "Python
 Plug 'davidhalter/jedi-vim'
 autocmd Filetype py match MatchParen '\%>79v.\+'
