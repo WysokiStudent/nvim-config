@@ -4,7 +4,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Everyday
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
-:match MatchParen '\%>79v.\+'
+":match MatchParen '\%>79v.\+'
+
+"Highlight words on double clicking
+:noremap <2-LeftMouse> * <c-o>
+:inoremap <2-LeftMouse> <c-[>* <c-o> i
 
 "Fileview
 Plug 'scrooloose/nerdtree'
@@ -41,6 +45,9 @@ Plug 'rhysd/vim-clang-format'
 let g:clang_format#detect_style_file=1
 let g:clang_format#auto_format_on_insert_leave=1
 autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google"}
+
+" C
+autocmd Filetype c set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
 
 " Markdown
 Plug 'godlygeek/tabular'
