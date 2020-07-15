@@ -26,6 +26,7 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>d :YcmCompleter GetDoc<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
 
 "Rust
