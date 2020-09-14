@@ -18,6 +18,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'cohama/lexima.vim'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
 let g:ycm_server_python_interpreter = 'python'
+let g:ycm_always_populate_location_list = 1
 "let g:ycm_clangd_binary_path = "/usr/bin/clangd"
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
