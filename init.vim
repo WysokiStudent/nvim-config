@@ -20,13 +20,16 @@ Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
 let g:ycm_server_python_interpreter = 'python'
 let g:ycm_always_populate_location_list = 1
 "let g:ycm_clangd_binary_path = "/usr/bin/clangd"
+let g:ycm_clangd_args = ['-cross-file-rename']
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
-nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>r :YcmCompleter RefactorRename 
+nnoremap <leader><leader> :YcmCompleter GoToReferences<CR>
+nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
 
