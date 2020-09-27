@@ -6,7 +6,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
 :set spelllang=en_us,pl
 :set spell
-":match MatchParen '\%>79v.\+'
+:match MatchParen '\%>79v.\+'
 
 "Highlight words on double clicking
 :noremap <2-LeftMouse> * <c-o>
@@ -26,7 +26,7 @@ let g:ycm_clangd_args = ['-cross-file-rename']
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+let g:ycm_key_list_select_completion = ['<TAB>']
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>r :YcmCompleter RefactorRename 
@@ -34,6 +34,12 @@ nnoremap <leader><leader> :YcmCompleter GoToReferences<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger='<leader><TAB>'
+let g:UltiSnipsJumpForwardTrigger='<TAB>'
+let g:UltiSnipsJumpBackwardTrigger="<s-TAB>"
 
 "Rust
 autocmd Filetype rs set tabstop=8 softtabstop=4 expandtab shiftwidth=4 smarttab
@@ -49,9 +55,9 @@ autocmd Filetype cpp match MatchParen '\%>79v.\+'
 autocmd Filetype cpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 autocmd Filetype hpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 Plug 'rhysd/vim-clang-format'
+autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google"}
 let g:clang_format#detect_style_file=1
 let g:clang_format#auto_format_on_insert_leave=1
-autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google"}
 
 " C
 autocmd Filetype c set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
@@ -59,6 +65,7 @@ autocmd Filetype c set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
 " Markdown
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
 
 "UML
 Plug 'aklt/plantuml-syntax'
@@ -71,10 +78,7 @@ call plug#end()
 " All the other stuff
 set number
 set completeopt=preview,menu,longest
-set shiftwidth=4
 set mouse=a
-set textwidth=0 
-set wrapmargin=0
 set nowrap
 :colorscheme delek
 
