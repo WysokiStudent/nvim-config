@@ -7,6 +7,9 @@ Plug 'vim-scripts/mru.vim'
 :set spelllang=en_us,pl
 :set spell
 :match MatchParen '\%>79v.\+'
+"Automatically break lines at 80 chars
+:set tw=80
+:set fo+=t
 
 "Highlight words on double clicking
 :noremap <2-LeftMouse> * <c-o>
@@ -77,7 +80,9 @@ call plug#end()
 
 " All the other stuff
 set number
-set completeopt=preview,menu,longest
+"YCM overrides menu with menuone
+"set completeopt=preview,menu,longest
+
 set mouse=a
 set nowrap
 :colorscheme delek
@@ -110,5 +115,3 @@ let g:lightline = {
 	    \ 't': 'TERMINAL',
 	    \}
 	    \ }
-
-
