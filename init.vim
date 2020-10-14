@@ -6,7 +6,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
 :set spelllang=en_us,pl
 :set spell
-:match MatchParen '\%>79v.\+'
+:match MatchParen '\%>80v.\+'
 "Automatically break lines at 80 chars
 :set tw=80
 :set fo+=t
