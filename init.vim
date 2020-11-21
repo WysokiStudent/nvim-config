@@ -10,6 +10,8 @@ Plug 'vim-scripts/mru.vim'
 "Automatically break lines at 80 chars
 :set tw=80
 :set fo+=t
+"Expand tabs
+:set tabstop=8 softtabstop=0 expandtab shiftwidth=8 smarttab
 
 "Highlight words on double clicking
 :noremap <2-LeftMouse> * <c-o>
@@ -73,6 +75,9 @@ let g:vim_markdown_folding_disabled = 1
 "UML
 Plug 'aklt/plantuml-syntax'
 call plug#end()
+
+" Flex and bison syntax highlighting
+Plug 'calincru/flex-bison-syntax'
 
 " Inside terminal-mode
 :tnoremap <C-[> <C-\><C-n>
