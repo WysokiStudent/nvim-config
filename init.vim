@@ -12,6 +12,7 @@ Plug 'vim-scripts/mru.vim'
 :set fo+=t
 "Expand tabs
 :set tabstop=8 softtabstop=0 expandtab shiftwidth=8 smarttab
+:set clipboard^=unnamedplus
 
 "Highlight words on double clicking
 :noremap <2-LeftMouse> * <c-o>
