@@ -8,10 +8,11 @@ Plug 'vim-scripts/mru.vim'
 :set spell
 :match MatchParen '\%>80v.\+'
 "Automatically break lines at 80 chars
-:set tw=80
+:set tw=120
 :set fo+=t
 "Expand tabs
 :set tabstop=8 softtabstop=0 expandtab shiftwidth=8 smarttab
+" Copy to and from system clipboard by default
 :set clipboard^=unnamedplus
 
 "Highlight words on double clicking
@@ -23,7 +24,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 "Completion
+" Brackets
 Plug 'cohama/lexima.vim'
+
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
 let g:ycm_server_python_interpreter = 'python'
 let g:ycm_always_populate_location_list = 1
@@ -121,3 +124,14 @@ let g:lightline = {
 	    \ 't': 'TERMINAL',
 	    \}
 	    \ }
+
+" modify selected text using combining diacritics
+command! -range -nargs=0 Overline        call s:CombineSelection(<line1>, <line2>, '0305')
+command! -range -nargs=0 Underline       call s:CombineSelection(<line1>, <line2>, '0332')
+command! -range -nargs=0 DoubleUnderline call s:CombineSelection(<line1>, <line2>, '0333')
+command! -range -nargs=0 Strikethrough   call s:CombineSelection(<line1>, <line2>, '0336')
+
+function! s:CombineSelection(line1, line2, cp)
+  execute 'let char = "\u'.a:cp.'"'
+  execute a:line1.','.a:line2.'s/\%V[^[:cntrl:]]/&'.char.'/ge'
+endfunction
