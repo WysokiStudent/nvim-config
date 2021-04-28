@@ -6,14 +6,18 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
 :set spelllang=en_us,pl
 :set spell
-:match MatchParen '\%>80v.\+'
+":match MatchParen '\%>80v.\+'
 "Automatically break lines at 80 chars
-:set tw=120
+":set tw=80
+autocmd Filetype py match :set tw=120
 :set fo+=t
 "Expand tabs
 :set tabstop=8 softtabstop=0 expandtab shiftwidth=8 smarttab
 " Copy to and from system clipboard by default
 :set clipboard^=unnamedplus
+
+" Show trailing whitespace
+" :set list listchars=trail:·
 
 "Highlight words on double clicking
 :noremap <2-LeftMouse> * <c-o>
@@ -60,7 +64,7 @@ autocmd Filetype py set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 "C++
 Plug 'octol/vim-cpp-enhanced-highlight'
-autocmd Filetype cpp match MatchParen '\%>79v.\+'
+"autocmd Filetype cpp match MatchParen '\%>79v.\+'
 autocmd Filetype cpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 autocmd Filetype hpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 Plug 'rhysd/vim-clang-format'
